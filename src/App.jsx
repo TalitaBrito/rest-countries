@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import GlobalTheme from "./globals";
-import Header from "./components/Header/Header";
+import Header from "./components/molecules/Header/Header";
+import Home from "./components/organisms/Home";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -28,16 +29,10 @@ function App() {
       <>
         <GlobalTheme />
         <Header changeTheme={toggleTheme} />
-        <Container />
+        <Home />
       </>
     </ThemeProvider>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 export default App;
