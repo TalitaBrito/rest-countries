@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    max-width: 20%;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.flag {
+    border-radius: 4px 4px 0 0;
+    width: 100%;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+}
+
+.title {
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.infoContainer > div {
+    font-size: .8rem;
+    margin-bottom: 8px;
+}
+
+.infoContainer > div > strong {
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
