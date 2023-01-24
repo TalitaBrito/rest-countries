@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lightTheme, darkTheme } from "./theme";
 import GlobalTheme from "./globals";
-import Header from "./components/molecules/Header/Header";
-import Home from "./components/organisms/Home";
+import Home from "./components/pages/Home";
+import Layout from "./components/pages/Layout";
+import DetailsCountry from "./components/pages/DetailsCountry";
+import { GlobalStorage } from "./hooks/GlobalStorage";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -26,11 +30,20 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <>
+      <GlobalStorage>
         <GlobalTheme />
-        <Header changeTheme={toggleTheme} />
-        <Home />
-      </>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout changeTheme={toggleTheme} />}>
+              <Route index element={<Home />} />
+              <Route
+                path="details-country/:code"
+                element={<DetailsCountry />}
+              />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalStorage>
     </ThemeProvider>
   );
 }
