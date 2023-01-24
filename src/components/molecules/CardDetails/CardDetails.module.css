@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.flag {
+    width: 380px;
+    height: 260px;
+    margin-right: 80px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 60px;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.firstColunm strong,
+.secondColunm strong {
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.firstColunm > div,
+.secondColunm > div {
+    margin-bottom: 8px;
+}
+
+.containerBorders {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
